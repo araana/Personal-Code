@@ -4,12 +4,17 @@ public class MultiplePrograms {
         int exit = 1;
         do {
             Scanner scan = new Scanner(System.in);
+            System.out.flush();
+            System.out.println();
             System.out.println("Which of the following programs would you like to execute");
+            System.out.println();
             System.out.println("1.Fibonacci Series");
             System.out.println("2.Factorial Calculation");
             System.out.println("3.Area");
             System.out.println("4.Palindrome Number");
-            System.out.println("5.Exit");
+            System.out.println("5.Palindrome Word");
+            System.out.println("6.Exit");
+            System.out.println();
             int a = scan.nextInt();
 
             System.out.println();
@@ -43,7 +48,20 @@ public class MultiplePrograms {
                     System.out.println("The given number is not a palindrome number");
                 }
             }
-            else if (a == 5){
+            else if (a==5){
+                System.out.println("Please enter a Palindrome Word");
+                String word = scan.next();
+                word = word.toLowerCase();
+                PalindromeWord pal = new PalindromeWord(word);
+                Boolean p = pal.toString(word);
+                if (p){
+                    System.out.println("The given word is a palindrome word");
+                }
+                else{
+                    System.out.println("The given word is not a palindrome word");
+                }
+            }
+            else if (a == 6){
                 exit = 0;
             }
             else{
